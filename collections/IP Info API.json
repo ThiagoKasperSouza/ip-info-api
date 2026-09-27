@@ -1,0 +1,185 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-09-26T21:30:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2025.1.0",
+  "resources": [
+    {
+      "_id": "wrk_9f3a2c1e5b4d4a8c9e0123456789abcd",
+      "parentId": null,
+      "modified": 1785171000000,
+      "created": 1785171000000,
+      "name": "IP Info API",
+      "description": "API enxuta em Java puro que devolve informações públicas de um IP.\n\nEndpoints:\n- GET /api/ip/{ip}  -> informações do IP informado\n- GET /api/ip       -> informações do IP público de quem chama\n\nServidor local por padrão na porta 8080.",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_9f3a2c1e5b4d4a8c9e0123456789abcd",
+      "parentId": "wrk_9f3a2c1e5b4d4a8c9e0123456789abcd",
+      "modified": 1785171000000,
+      "created": 1785171000000,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8080",
+        "ip": "8.8.8.8"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url",
+          "ip"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1785171000000,
+      "_type": "environment"
+    },
+    {
+      "_id": "req_8f3a2c1e5b4d4a8c9e0123456789aaaa",
+      "parentId": "wrk_9f3a2c1e5b4d4a8c9e0123456789abcd",
+      "modified": 1785171001000,
+      "created": 1785171001000,
+      "url": "{{ _.base_url }}/api/ip/{{ _.ip }}",
+      "name": "IP específico (Google DNS)",
+      "description": "Retorna as informações públicas do IP 8.8.8.8 (Google DNS).",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -200,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_8f3a2c1e5b4d4a8c9e0123456789bbbb",
+      "parentId": "wrk_9f3a2c1e5b4d4a8c9e0123456789abcd",
+      "modified": 1785171002000,
+      "created": 1785171002000,
+      "url": "{{ _.base_url }}/api/ip/1.1.1.1",
+      "name": "IP específico (Cloudflare)",
+      "description": "Retorna as informações públicas do IP 1.1.1.1 (Cloudflare DNS).",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -150,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_8f3a2c1e5b4d4a8c9e0123456789cccc",
+      "parentId": "wrk_9f3a2c1e5b4d4a8c9e0123456789abcd",
+      "modified": 1785171003000,
+      "created": 1785171003000,
+      "url": "{{ _.base_url }}/api/ip",
+      "name": "Próprio IP público",
+      "description": "Sem informar IP, retorna as informações do IP público de quem faz a requisição.",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -100,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_8f3a2c1e5b4d4a8c9e0123456789dddd",
+      "parentId": "wrk_9f3a2c1e5b4d4a8c9e0123456789abcd",
+      "modified": 1785171004000,
+      "created": 1785171004000,
+      "url": "{{ _.base_url }}/api/ip/999.999.999.999",
+      "name": "IP inválido (espera 404)",
+      "description": "Exemplo de resposta de erro: IP inválido deve retornar HTTP 404 com {\"status\":\"fail\",\"message\":\"invalid query\"}.",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -50,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_8f3a2c1e5b4d4a8c9e0123456789eeee",
+      "parentId": "wrk_9f3a2c1e5b4d4a8c9e0123456789abcd",
+      "modified": 1785171005000,
+      "created": 1785171005000,
+      "url": "{{ _.base_url }}/api/ip/8.8.8.8",
+      "name": "Método não permitido (POST -> 405)",
+      "description": "A API só aceita GET; enviar POST deve retornar HTTP 405.",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": 0,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    }
+  ]
+}
